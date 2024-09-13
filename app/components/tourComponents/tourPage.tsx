@@ -238,62 +238,64 @@ export function TourMainBlock() {
                     </Tabs>
                 )}
                 <Divider />
-                <div className="my-10 md:my-15 text-center md:text-left">
-                    <p className="text-2xl md:text-4xl font-bold">{g('frequentlyAskedQuestions')}</p>
-                    {locale == "ru" && (
-                        <Accordion variant="shadow" className="mt-10 md:mt-16">
-                            {data.ru.frequentlyAskedQuestions.map((question, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    title={question.title}
-                                >
-                                    <ul className="list-inside list-disc">
-                                        {question.answers.map((answer, index) => (
-                                            <li key={index} className="py-1 pl-2">
-                                                {answer.text}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    )}
-                    {locale == "en" && (
-                        <Accordion variant="shadow" className="mt-10 md:mt-16">
-                            {data.en.frequentlyAskedQuestions.map((question, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    title={question.title}
-                                >
-                                    <ul className="list-inside list-disc">
-                                        {question.answers.map((answer, index) => (
-                                            <li key={index} className="py-1 pl-2">
-                                                {answer.text}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    )}
-                    {locale == "de" && (
-                        <Accordion variant="shadow" className="mt-10 md:mt-16">
-                            {data.de.frequentlyAskedQuestions.map((question, index) => (
-                                <AccordionItem
-                                    key={index}
-                                    title={question.title}
-                                >
-                                    <ul className="list-inside list-disc">
-                                        {question.answers.map((answer, index) => (
-                                            <li key={index} className="py-1 pl-2">
-                                                {answer.text}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    )}
+                <div className="my-10 md:my-15 text-center">
+                    <p className="text-2xl md:text-4xl font-bold m-auto">{g('frequentlyAskedQuestions')}</p>
+                    <div className="text-left">
+                        {locale == "ru" && (
+                            <Accordion variant="shadow" className="mt-10 md:mt-16">
+                                {data.ru.frequentlyAskedQuestions.map((question, index) => (
+                                    <AccordionItem
+                                        key={index}
+                                        title={question.title}
+                                    >
+                                        <ul className="list-inside list-disc">
+                                            {question.answers.map((answer, index) => (
+                                                <li key={index} className="py-1 md:pl-2">
+                                                    {answer.text}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </AccordionItem>
+                                ))}
+                            </Accordion>
+                        )}
+                        {locale == "en" && (
+                            <Accordion variant="shadow" className="mt-10 md:mt-16">
+                                {data.en.frequentlyAskedQuestions.map((question, index) => (
+                                    <AccordionItem
+                                        key={index}
+                                        title={question.title}
+                                    >
+                                        <ul className="list-inside list-disc">
+                                            {question.answers.map((answer, index) => (
+                                                <li key={index} className="py-1 md:pl-2">
+                                                    {answer.text}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </AccordionItem>
+                                ))}
+                            </Accordion>
+                        )}
+                        {locale == "de" && (
+                            <Accordion variant="shadow" className="mt-10 md:mt-16">
+                                {data.de.frequentlyAskedQuestions.map((question, index) => (
+                                    <AccordionItem
+                                        key={index}
+                                        title={question.title}
+                                    >
+                                        <ul className="list-inside list-disc">
+                                            {question.answers.map((answer, index) => (
+                                                <li key={index} className="py-1 md:pl-2">
+                                                    {answer.text}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </AccordionItem>
+                                ))}
+                            </Accordion>
+                        )}
+                    </div>
                 </div>
                 <Divider />
                 <div className="my-10 md:my-16 h-[450px] hidden md:grid grid-cols-1 md:grid-cols-5 gap-10">
